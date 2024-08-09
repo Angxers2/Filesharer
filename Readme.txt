@@ -1,4 +1,4 @@
-Certainly! Here’s the updated `README.txt` that includes a note about setting the execute permissions for `install.sh`:
+
 
 ---
 
@@ -6,86 +6,94 @@ Certainly! Here’s the updated `README.txt` that includes a note about setting 
 
 ## Overview
 
-`Fileshare.py` is a script designed to send files or folders from one machine to another over various protocols. You can specify the method of transfer, such as SCP, FTP, SFTP, or RSYNC. The script also supports debugging mode to help with troubleshooting.
+Fileshare.py is a Python script for transferring files or folders to a remote machine using various protocols. It supports SCP, FTP, SFTP, and RSYNC. It also includes a debug mode for troubleshooting.
 
 ## Features
 
-- **Send files or folders** to a remote machine.
-- **Choose transfer method**: SCP, FTP, SFTP, or RSYNC.
-- **Debug mode** for detailed error reporting.
-- **Command-line arguments** for flexible usage.
+- **File/Folder Transfer**: Send files or directories to a remote machine.
+- **Multiple Protocols**: Choose from SCP, FTP, SFTP, or RSYNC.
+- **Debug Mode**: Activate detailed error reporting.
+- **Command-Line Arguments**: Simple and flexible usage.
 
 ## Prerequisites
 
-Before running the script, ensure that you run the install script:
+- Python 3.x
+- Required Python libraries
 
 ## Installation
 
 1. **Make the installation script executable:**
 
-    ```bash
+    ```plaintext
     chmod +x install.sh
     ```
 
 2. **Run the installation script:**
 
-    ```bash
+    ```plaintext
     ./install.sh
     ```
 
-   This script will install Python 3, pip, and all required libraries.
+    The script will install Python 3, pip, and all required libraries. During installation, it will display an animation.
 
 ## Usage
 
 ### Basic Syntax
 
-```bash
+```plaintext
 python3 Fileshare.py -f FILE -i IP -u USER -r REMOTE -w METHOD [-d]
 ```
 
-### Arguments
+## Arguments
 
-- `-f FILE, --file FILE`  
-  *Path to the file or folder to send.*
+- **`-f FILE, --file FILE`**  
+  Path to the file or folder to send. *(REQUIRED)*
 
-- `-i IP, --ip IP`  
-  *IP address of the remote machine.*
+- **`-i IP, --ip IP`**  
+  IP address of the remote machine. *(REQUIRED)*
 
-- `-u USER, --user USER`  
-  *Username of the remote machine.*
+- **`-u USER, --user USER`**  
+  Username for the remote machine. *(REQUIRED)*
 
-- `-r REMOTE, --remote REMOTE`  
-  *Path on the remote machine to save the file.*
+- **`-r REMOTE, --remote REMOTE`**  
+  Destination path on the remote machine. *(REQUIRED)*
 
-- `-w METHOD, --way METHOD`  
-  *Method to send the file. Options: scp, ftp, sftp, rsync.*
+- **`-w METHOD, --way METHOD`**  
+  Transfer method: `scp`, `ftp`, `sftp`, `rsync`. *(REQUIRED)*
 
-- `-d, --debug`  
-  *Enable debug mode.*
+- **`-d, --debug`**  
+  Enable debug mode.
 
-### Examples
+## Examples
 
 **Send a file using SCP:**
 
-```bash
+```plaintext
 python3 Fileshare.py -f /path/to/file -i 192.168.1.1 -u username -r /remote/path -w scp
 ```
 
-**Send a folder using RSYNC:**
+**Send a folder using SCP:**
 
-```bash
-python3 Fileshare.py -f /path/to/folder -i 192.168.1.1 -u username -r /remote/path -w rsync
+```plaintext
+python3 Fileshare.py -f /path/to/folder -i 192.168.1.1 -u username -r /remote/path -w scp
 ```
 
-## Troubleshooting
+**Send a file using FTP:**
 
-If you encounter any issues:
-- Check the command syntax.
-- Ensure all required libraries are installed by running `./install.sh`.
-- Use the `-d` flag for debug mode to get detailed error information.
+```plaintext
+python3 Fileshare.py -f /path/to/file -i 192.168.1.1 -u username -r /remote/path -w ftp
+```
 
-## License
+**Send a file using SFTP:**
 
-This script is provided "as-is" without warranty of any kind. Use it at your own risk.
+```plaintext
+python3 Fileshare.py -f /path/to/file -i 192.168.1.1 -u username -r /remote/path -w sftp
+```
+
+**Send a file using RSYNC:**
+
+```plaintext
+python3 Fileshare.py -f /path/to/file -i 192.168.1.1 -u username -r /remote/path -w rsync
+```
 
 ---
